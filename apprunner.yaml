@@ -5,10 +5,13 @@ build:
     build:
       - python3 -m ensurepip --upgrade
       - python3 -m pip install -r requirements.txt
+      - python3  manage.py makemigrations
+
 run:
   runtime-version: 3.11.9
   pre-run:
     - python3 -m pip install -r requirements.txt
+    - python3  manage.py makemigrations
     - which gunicorn
   command: gunicorn --bind=0.0.0.0:8080 --timeout=5 horilla.wsgi:application --log-file -
   network:
