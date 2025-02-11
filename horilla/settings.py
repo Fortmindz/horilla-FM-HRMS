@@ -30,7 +30,7 @@ env = environ.Env(
         "django-insecure-j8op9)1q8$1&0^s&p*_0%d#pr@w9qj@1o=3#@d=a(^@9@zd@%j",
     ),
     ALLOWED_HOSTS=(list, ["*"]),
-    CSRF_TRUSTED_ORIGINS=(list, ["http://localhost:8000"]),
+    CSRF_TRUSTED_ORIGINS=(list, ["http://localhost:8000","https://localhost:8000"]),
 )
 
 env.read_env(os.path.join(BASE_DIR, ".env"), overwrite=True)
@@ -136,13 +136,23 @@ WSGI_APPLICATION = "horilla.wsgi.application"
 #         }
 #     }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'hrms',
+#         'USER': 'postgres',
+#         'PASSWORD': 'admin1234',
+#         'HOST': 'database-1.cfkmy8ae8kqk.ap-south-1.rds.amazonaws.com', 
+#         'PORT': '5432',
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hrms',
+        'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'admin1234',
-        'HOST': 'database-1.cfkmy8ae8kqk.ap-south-1.rds.amazonaws.com', 
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost', 
         'PORT': '5432',
     }
 }
@@ -245,13 +255,13 @@ DJANGO_NOTIFICATIONS_CONFIG = {
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
-LANGUAGES = (
-    ("en", "English (US)"),
-    ("de", "Deutsche"),
-    ("es", "Español"),
-    ("fr", "France"),
-    ("ar", "عربى"),
-)
+# LANGUAGES = (
+#     ("en", "English (US)"),
+#     ("de", "Deutsche"),
+#     ("es", "Español"),
+#     ("fr", "France"),
+#     ("ar", "عربى"),
+# )
 
 LOCALE_PATHS = [
     join(BASE_DIR, "horilla", "locale"),
