@@ -136,26 +136,26 @@ WSGI_APPLICATION = "horilla.wsgi.application"
 #         }
 #     }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'hrms',
-#         'USER': 'postgres',
-#         'PASSWORD': 'admin1234',
-#         'HOST': 'database-1.cfkmy8ae8kqk.ap-south-1.rds.amazonaws.com', 
-#         'PORT': '5432',
-#     }
-# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'hrms',
         'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost', 
+        'PASSWORD': 'admin1234',
+        'HOST': 'fm-connect-staging.cfkmy8ae8kqk.ap-south-1.rds.amazonaws.com', 
         'PORT': '5432',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': 'postgres',
+#         'HOST': 'localhost', 
+#         'PORT': '5432',
+#     }
+# }
 # from sshtunnel import SSHTunnelForwarder
 # GDAL_LIBRARY_PATH = r'C:\geo-project\venv\Lib\site-packages\osgeo\gdal304.dll'
 # GEOS_LIBRARY_PATH = r'C:\geo-project\venv\Lib\site-packages\osgeo\geos_c.dll'
