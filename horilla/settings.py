@@ -114,27 +114,70 @@ WSGI_APPLICATION = "horilla.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-if env("DATABASE_URL", default=None):
-    DATABASES = {
-        "default": env.db(),
+# if env("DATABASE_URL", default=None):
+#     DATABASES = {
+#         "default": env.db(),
+#     }
+# else:
+#     DATABASES = {
+#         "default": {
+#             "ENGINE": env("DB_ENGINE", default="django.db.backends.sqlite3"),
+#             "NAME": env(
+#                 "DB_NAME",
+#                 default=os.path.join(
+#                     BASE_DIR,
+#                     "TestDB_Horilla.sqlite3",
+#                 ),
+#             ),
+#             "USER": env("DB_USER", default=""),
+#             "PASSWORD": env("DB_PASSWORD", default=""),
+#             "HOST": env("DB_HOST", default=""),
+#             "PORT": env("DB_PORT", default=""),
+#         }
+#     }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'hrms',
+        'USER': 'postgres',
+        'PASSWORD': 'admin1234',
+        'HOST': 'database-1.cfkmy8ae8kqk.ap-south-1.rds.amazonaws.com', 
+        'PORT': '5432',
     }
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": env("DB_ENGINE", default="django.db.backends.sqlite3"),
-            "NAME": env(
-                "DB_NAME",
-                default=os.path.join(
-                    BASE_DIR,
-                    "TestDB_Horilla.sqlite3",
-                ),
-            ),
-            "USER": env("DB_USER", default=""),
-            "PASSWORD": env("DB_PASSWORD", default=""),
-            "HOST": env("DB_HOST", default=""),
-            "PORT": env("DB_PORT", default=""),
-        }
-    }
+}
+# from sshtunnel import SSHTunnelForwarder
+# GDAL_LIBRARY_PATH = r'C:\geo-project\venv\Lib\site-packages\osgeo\gdal304.dll'
+# GEOS_LIBRARY_PATH = r'C:\geo-project\venv\Lib\site-packages\osgeo\geos_c.dll'
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#         'HOST': 'localhost',
+#         'PORT': 5432,
+#         'NAME': 'fortmind_horrilla',
+#         'USER': 'fortmind_rahul',
+#         'PASSWORD': 'Fortmindz@12345',
+#     },
+#     'shhtunnel_db': {
+#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#         'HOST': 'fortmindz.com',
+#         'PORT': 7822,
+#         'USER': 'fortmind',
+#         'PASSWORD': 'hY!7bEI42tWw;8',
+#     },
+# }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#         'HOST': 'localhost',
+#         'PORT': 5432,  # Local forwarded port
+#         'NAME': 'fortmind_horrilla',  # Actual DB name from the remote server
+#         'USER': 'fortmind',
+#         'PASSWORD': 'hY!7bEI42tWw;8',
+#     },
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
