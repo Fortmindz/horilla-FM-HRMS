@@ -10,6 +10,6 @@ run:
   pre-run:
     - python3 -m pip install -r requirements.txt
     - which gunicorn
-  command: gunicorn --bind=0.0.0.0:8080 --timeout=5 --worker-class=gevent horilla.wsgi:application --log-file -
+  command: gunicorn --bind=0.0.0.0:8080 --timeout=5 horilla.wsgi:application --log-file -
   network:
     port: 8080
