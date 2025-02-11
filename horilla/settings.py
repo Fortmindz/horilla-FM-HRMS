@@ -139,7 +139,7 @@ WSGI_APPLICATION = "horilla.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hrms',
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'admin1234',
         'HOST': 'fm-connect-staging.cfkmy8ae8kqk.ap-south-1.rds.amazonaws.com', 
