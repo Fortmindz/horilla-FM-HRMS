@@ -13,6 +13,6 @@ run:
     - python3 -m pip install -r requirements.txt
     - python3  manage.py makemigrations
     - which gunicorn
-  command: gunicorn --bind=0.0.0.0:8080 --timeout=5 horilla.wsgi:application --log-file -
+  command: gunicorn horilla.wsgi:application -b :8080 --timeout 120 --workers=10 --threads=10 --worker-connections=1000
   network:
     port: 8080
