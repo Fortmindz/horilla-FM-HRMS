@@ -7,15 +7,14 @@ build:
       - python3 -m pip install -r requirements.txt
       - python3  manage.py makemigrations
       - python3  manage.py migrate
-      - python3  manage.py collectstatic
-
+      - python3  manage.py collectstatic --noinput
 run:
   runtime-version: 3.11.9
   pre-run:
     - python3 -m pip install -r requirements.txt
     - python3  manage.py makemigrations
     - python3  manage.py migrate
-    - python3  manage.py collectstatic
+    - python3  manage.py collectstatic --noinput
     - which gunicorn
   command: gunicorn horilla.wsgi:application -b :8080 --timeout 120 --workers=20 --threads=20 --worker-connections=1000
   network:
