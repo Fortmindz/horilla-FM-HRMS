@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 env = environ.Env(
-    DEBUG=(bool, True),
+    DEBUG=(bool, False),
     SECRET_KEY=(
         str,
         "django-insecure-j8op9)1q8$1&0^s&p*_0%d#pr@w9qj@1o=3#@d=a(^@9@zd@%j",
@@ -33,7 +33,7 @@ env = environ.Env(
     CSRF_TRUSTED_ORIGINS=(list, ["http://localhost:8000","https://localhost:8000","https://njjbjpbngk.ap-south-1.awsapprunner.com"]),
 )
 
-env.read_env(os.path.join(BASE_DIR, ".env"), overwrite=True)
+env.read_env(os.path.join(BASE_DIR, ".env"), overwrite=False)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("SECRET_KEY")
@@ -146,48 +146,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'postgres',
-#         'PASSWORD': 'postgres',
-#         'HOST': 'localhost', 
-#         'PORT': '5432',
-#     }
-# }
-# from sshtunnel import SSHTunnelForwarder
-# GDAL_LIBRARY_PATH = r'C:\geo-project\venv\Lib\site-packages\osgeo\gdal304.dll'
-# GEOS_LIBRARY_PATH = r'C:\geo-project\venv\Lib\site-packages\osgeo\geos_c.dll'
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#         'HOST': 'localhost',
-#         'PORT': 5432,
-#         'NAME': 'fortmind_horrilla',
-#         'USER': 'fortmind_rahul',
-#         'PASSWORD': 'Fortmindz@12345',
-#     },
-#     'shhtunnel_db': {
-#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#         'HOST': 'fortmindz.com',
-#         'PORT': 7822,
-#         'USER': 'fortmind',
-#         'PASSWORD': 'hY!7bEI42tWw;8',
-#     },
-# }
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#         'HOST': 'localhost',
-#         'PORT': 5432,  # Local forwarded port
-#         'NAME': 'fortmind_horrilla',  # Actual DB name from the remote server
-#         'USER': 'fortmind',
-#         'PASSWORD': 'hY!7bEI42tWw;8',
-#     },
-# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
