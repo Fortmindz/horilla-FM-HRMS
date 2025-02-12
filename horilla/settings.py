@@ -151,7 +151,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'PASSWORD': 'admin',
         'HOST': 'localhost', 
         'PORT': '5432',
     }
@@ -255,13 +255,9 @@ DJANGO_NOTIFICATIONS_CONFIG = {
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
-# LANGUAGES = (
-#     ("en", "English (US)"),
-#     ("de", "Deutsche"),
-#     ("es", "Español"),
-#     ("fr", "France"),
-#     ("ar", "عربى"),
-# )
+LANGUAGES = (
+    ("en", "English (US)"),
+)
 
 LOCALE_PATHS = [
     join(BASE_DIR, "horilla", "locale"),
